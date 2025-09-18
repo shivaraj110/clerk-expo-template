@@ -1,18 +1,24 @@
 import { useEffect, useState } from "react";
 import { View, Text, TouchableOpacity, ScrollView, Switch, TextInput, Alert } from "react-native";
-import MapView, { Marker } from "react-native-maps";
+import MapView, { Marker, MapPressEvent } from "react-native-maps";
 import * as Location from "expo-location";
 import { LinearGradient } from "expo-linear-gradient";
 
 export default function CreateRide() {
-  const [pickup, setPickup] = useState(null);
-  const [drop, setDrop] = useState(null);
-  const [region, setRegion] = useState(null);
   const [seats, setSeats] = useState("");
   const [price, setPrice] = useState("");
   const [carModel, setCarModel] = useState("");
   const [luggage, setLuggage] = useState(false);
   const [selecting, setSelecting] = useState<"pickup" | "drop" | null>(null);
+  const [region, setRegion] = useState<{
+    latitude: number;
+    longitude: number;
+    latitudeDelta: number;
+    longitudeDelta: number;
+  } | null>(null);
+
+  const [pickup, setPickup] = useState<{ latitude: number; longitude: number } | null>(null);
+  const [drop, setDrop] = useState<{ latitude: number; longitude: number } | null>(null);
 
   useEffect(() => {
     (async () => {
@@ -32,7 +38,7 @@ export default function CreateRide() {
     })();
   }, []);
 
-  const handleMapPress = (e) => {
+  const handleMapPress = (e: MapPressEvent) => {
     const coord = e.nativeEvent.coordinate;
     if (selecting === "pickup") {
       setPickup(coord);
