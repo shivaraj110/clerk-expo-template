@@ -14,6 +14,7 @@ export const getJwt = async (userId: string,endPoint:endpoint,firstName?:string,
       },
       {
         headers: {
+
           "Content-Type": "application/json",
         },
         timeout: 10000, // 10 second timeout
