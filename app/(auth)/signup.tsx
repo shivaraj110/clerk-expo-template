@@ -27,9 +27,6 @@ export default function Signup() {
 			await signUp.create({
 				emailAddress: form.email,
 				password: form.password,
-				phoneNumber: form.phone,
-				firstName: form.name.split(" ")[0],
-				lastName: form.name.split(" ")[1],
 			});
 
 			// Send user an email with verification code
@@ -89,24 +86,13 @@ export default function Signup() {
 	}
 
 	return (
-		<View className="flex-1 bg-green-800 justify-end items-center  w-[100%]">
+		<View className="flex-1 bg-teal-800 justify-end items-center  w-[100%]">
 			<View className="bg-white rounded-3xl w-full p-6 shadow-lg">
 				<Text className="text-2xl font-bold text-center mb-6">
 					Create Your Account
 				</Text>
 
-				<TextInput
-					placeholder="Full Name"
-					value={form.name}
-					onChangeText={(t) => setForm({ ...form, name: t })}
-					className="border border-gray-300 rounded-xl px-4 py-3 mb-3"
-				/>
-				<TextInput
-					placeholder="Phone"
-					value={form.phone}
-					onChangeText={(t) => setForm({ ...form, name: t })}
-					className="border border-gray-300 rounded-xl px-4 py-3 mb-3"
-				/>
+		
 				<TextInput
 					placeholder="Email"
 					keyboardType="email-address"
@@ -123,7 +109,7 @@ export default function Signup() {
 				/>
 
 				<TouchableOpacity
-					className="bg-green-700 py-3 rounded-2xl mb-4"
+					className="bg-teal-700 py-3 rounded-2xl mb-4"
 					onPress={onSignUpPress}
 				>
 					<Text className="text-center text-white font-semibold">Sign Up</Text>

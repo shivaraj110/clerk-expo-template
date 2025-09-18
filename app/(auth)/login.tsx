@@ -36,7 +36,7 @@ export default function Login() {
 		}
 	};
 	return (
-		<View className="flex-1 bg-green-800 justify-end items-center  w-[100%]">
+		<View className="flex-1 bg-teal-700 justify-end items-center  w-[100%]">
 			<View className="bg-white rounded-3xl w-full p-6 shadow-lg">
 				<Text className="text-2xl font-bold text-center mb-6">Login</Text>
 
@@ -61,7 +61,7 @@ export default function Login() {
 
 				<TouchableOpacity
 					onPress={onSignInPress}
-					className="bg-green-700 py-3 rounded-2xl mb-4"
+					className="bg-teal-700 py-3 rounded-2xl mb-4"
 				>
 					<Text className="text-center text-white font-semibold">Login</Text>
 				</TouchableOpacity>
