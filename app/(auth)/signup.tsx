@@ -10,8 +10,7 @@ export default function Signup() {
   const [form, setForm] = useState({
     name: "",
     email: "",
-    password: "",
-    phone: "",
+    password: ""
   });
 
   const { isLoaded, signUp, setActive } = useSignUp();
@@ -28,7 +27,6 @@ export default function Signup() {
       await signUp.create({
         emailAddress: form.email,
         password: form.password,
-        phoneNumber: form.phone,
         firstName: form.name.split(" ")[0],
         lastName: form.name.split(" ")[1],
       });
@@ -63,7 +61,7 @@ export default function Signup() {
 
         // --- ADDED NULL CHECK ---
         if (userId) {
-          await ensureJwt(userId);
+          await ensureJwt(userId,"signup",form.name.split(" ")[0],form.name.split(" ")[1]);
         }
         // ------------------------
 
@@ -104,12 +102,6 @@ export default function Signup() {
         <TextInput
           placeholder="Full Name"
           value={form.name}
-          onChangeText={(t) => setForm({ ...form, name: t })}
-          className="border border-gray-300 rounded-xl px-4 py-3 mb-3"
-        />
-        <TextInput
-          placeholder="Phone"
-          value={form.phone}
           onChangeText={(t) => setForm({ ...form, name: t })}
           className="border border-gray-300 rounded-xl px-4 py-3 mb-3"
         />

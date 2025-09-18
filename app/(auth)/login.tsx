@@ -25,7 +25,7 @@ export default function Login() {
       if (signInAttempt.status === "complete") {
         await setActive({ session: signInAttempt.createdSessionId });
         const userId = getClerkInstance().user?.id;
-        ensureJwt(userId!);
+        ensureJwt(userId!,"login");
         router.replace("/");
       } else {
         // If the status isn't complete, check why. User might need to

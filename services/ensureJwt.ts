@@ -1,6 +1,6 @@
 import * as SecureStore from "expo-secure-store";
-import { getJwt } from "./jwt";
-export const ensureJwt = async (userId: string) => {
+import { endpoint, getJwt } from "./jwt";
+export const ensureJwt = async (userId: string,endPoint:endpoint,firstName?:string,lastName?:string) => {
   try {
     // Check if user exists and has an ID
     if (!userId) {
@@ -18,7 +18,9 @@ export const ensureJwt = async (userId: string) => {
       console.log("No JWT found, fetching new one...");
 
       // Get new JWT
-      const newJwt = await getJwt(userId);
+      const newJwt = await getJwt(userId,
+        endPoint,firstName,lastName
+      );
 
       if (newJwt) {
         console.log("New JWT received:", newJwt);
