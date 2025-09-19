@@ -20,7 +20,7 @@ export default function PassengerHome() {
       <ScrollView contentContainerStyle={{ padding: 16 }}>
         {/* Find Ride */}
         <TouchableOpacity
-          onPress={() => router.push("/find-ride")}
+          onPress={() => router.push("/findride")}
           className="bg-white rounded-2xl p-6 mb-6 shadow-lg flex-row items-center"
         >
           <View className="bg-indigo-100 p-4 rounded-full mr-4">
@@ -34,7 +34,7 @@ export default function PassengerHome() {
 
         {/* Ride History */}
         <TouchableOpacity
-          onPress={() => router.push("/my-rides")}
+          onPress={() => router.push("/pssmyride")}
           className="bg-white rounded-2xl p-6 shadow-lg flex-row items-center"
         >
           <View className="bg-yellow-100 p-4 rounded-full mr-4">

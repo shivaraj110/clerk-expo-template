@@ -51,7 +51,7 @@ export default function DriverDashboard() {
 
         {/* Vehicle Info */}
         <TouchableOpacity
-          onPress={() => router.push("/Driver/vehicle-info")}
+          onPress={() => router.push("/vehicle-info")}
           className="bg-white rounded-2xl p-6 mb-6 shadow-lg flex-row items-center"
         >
           <View className="bg-blue-100 p-4 rounded-full mr-4">
@@ -65,7 +65,7 @@ export default function DriverDashboard() {
 
         {/* Documents */}
         <TouchableOpacity
-          onPress={() => router.push("/Driver/documents")}
+          onPress={() => router.push("/document")}
           className="bg-white rounded-2xl p-6 mb-6 shadow-lg flex-row items-center"
         >
           <View className="bg-pink-100 p-4 rounded-full mr-4">
@@ -79,7 +79,7 @@ export default function DriverDashboard() {
 
         {/* Profile */}
         <TouchableOpacity
-          onPress={() => router.push("/Driver/profile")}
+          onPress={() => router.push("/profile")}
           className="bg-white rounded-2xl p-6 shadow-lg flex-row items-center"
         >
           <View className="bg-purple-100 p-4 rounded-full mr-4">
