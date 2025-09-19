@@ -4,7 +4,6 @@ import MapView, { Marker,LatLng } from "react-native-maps";
 import MapViewDirections from "react-native-maps-directions";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 
-const GOOGLE_MAPS_APIKEY = "AIzaSyAkp7D79KD4uSeoiWUgkPazNgzBEMMLsio";
 
 export default function CarPoolingMap() {
 
@@ -27,7 +26,7 @@ const [destination, setDestination] = useState<LatLng | null>(null);
 }}
 
         query={{
-          key: GOOGLE_MAPS_APIKEY,
+          key:process.env.GOOGLE_MAPS_APIKEY,
           language: "en",
         }}
         styles={{
@@ -49,7 +48,7 @@ const [destination, setDestination] = useState<LatLng | null>(null);
 }}
 
         query={{
-          key: GOOGLE_MAPS_APIKEY,
+          key: process.env.GOOGLE_MAPS_APIKEY,
           language: "en",
         }}
         styles={{
@@ -77,7 +76,7 @@ const [destination, setDestination] = useState<LatLng | null>(null);
           <MapViewDirections
             origin={source}
             destination={destination}
-            apikey={GOOGLE_MAPS_APIKEY}
+            apikey={process.env.GOOGLE_MAPS_APIKEY}
             strokeWidth={4}
             strokeColor="blue"
           />

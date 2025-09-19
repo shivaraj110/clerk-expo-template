@@ -23,7 +23,7 @@ export default function RoleSelection() {
       <View className="flex-1 justify-center px-6">
         {/* Passenger */}
         <TouchableOpacity
-          onPress={() => router.replace("/components/passenger")} // 👈 goes to passenger home
+          onPress={() => router.replace("/passenger")} // 👈 goes to passenger home
           className="bg-white rounded-3xl p-8 mb-8 shadow-lg items-center"
         >
           <View className="bg-indigo-100 p-6 rounded-full mb-4">
@@ -37,7 +37,7 @@ export default function RoleSelection() {
 
         {/* Driver */}
         <TouchableOpacity
-          onPress={() => router.replace("/components/driver")} // 👈 goes to driver section
+          onPress={() => router.replace("/driver")} // 👈 goes to driver section
           className="bg-white rounded-3xl p-8 shadow-lg items-center"
         >
           <View className="bg-green-100 p-6 rounded-full mb-4">

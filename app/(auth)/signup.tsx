@@ -65,7 +65,7 @@ export default function Signup() {
         }
         // ------------------------
 
-        router.replace("/");
+        router.replace("/home");
       } else {
         console.log(JSON.stringify(signUpAttempt, null, 2));
       }

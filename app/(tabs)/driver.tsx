@@ -23,7 +23,7 @@ export default function DriverDashboard() {
       <ScrollView contentContainerStyle={{ padding: 16 }}>
         {/* Create Ride */}
         <TouchableOpacity
-          onPress={() => router.push("/components/create-ride")}
+          onPress={() => router.replace("/createride")}
           className="bg-white rounded-2xl p-6 mb-6 shadow-lg flex-row items-center"
         >
           <View className="bg-green-100 p-4 rounded-full mr-4">
@@ -37,7 +37,7 @@ export default function DriverDashboard() {
 
         {/* My Rides */}
         <TouchableOpacity
-          onPress={() => router.push("/Driver/my-rides")}
+          onPress={() => router.push("/myrides")}
           className="bg-white rounded-2xl p-6 mb-6 shadow-lg flex-row items-center"
         >
           <View className="bg-yellow-100 p-4 rounded-full mr-4">

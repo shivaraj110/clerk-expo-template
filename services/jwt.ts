@@ -35,8 +35,10 @@ export const getJwt = async (userId: string,endPoint:endpoint,firstName?:string,
       },
     )
    }
-
+//@ts-ignore
     console.log("JWT received:", response.data.token);
+//@ts-ignore
+
     return response.data.token;
   } catch (err: any) {
     console.error(

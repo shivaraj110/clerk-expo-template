@@ -66,7 +66,7 @@ export default function Login() {
           onPress={onSignInPress}
           className="bg-green-700 py-3 rounded-2xl mb-4"
         >
-          <Text className="text-center text-white font-semibold">Login</Text>
+          <Text className="text-center text-white font-semibold" >Login</Text>
         </TouchableOpacity>
 
         <Text className="text-center text-gray-600 pb-6">

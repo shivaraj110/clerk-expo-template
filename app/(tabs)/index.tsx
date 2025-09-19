@@ -1,5 +1,5 @@
 // app/Onboarding.tsx
-import { useRouter } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import { Text, TouchableOpacity, View } from "react-native";
 import "../../global.css";
 import { SignedIn, SignedOut, useUser } from "@clerk/clerk-expo";
@@ -13,6 +13,7 @@ export default function Onboarding() {
 		<View className="flex justify-center items-center h-[100%]">
 			<SignedIn>
 				<Text>Hello {user?.emailAddresses[0].emailAddress}</Text>
+				<Link href={"/home"} className="text-green-400">Home</Link>
 				<SignOutButton />
 			</SignedIn>
 			<SignedOut>

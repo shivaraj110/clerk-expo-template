@@ -7,7 +7,7 @@ export default {
     slug: "ride-app",
     version: "1.0.0",
     extra: {
-      googleMapsApiKey: process.env.AIzaSyAkp7D79KD4uSeoiWUgkPazNgzBEMMLsio,
+      googleMapsApiKey: "AIzaSyAkp7D79KD4uSeoiWUgkPazNgzBEMMLsio",
     },
     "plugins": [
     "expo-maps"

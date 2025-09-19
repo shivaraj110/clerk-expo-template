@@ -1,7 +1,6 @@
 // components/MapComponent.tsx
 import React from 'react';
 import { Platform, View, StyleSheet } from 'react-native';
-import { GOOGLE_MAPS_API_KEY } from '../config';
 
 type Props = {
   latitude: number;
@@ -12,9 +11,9 @@ type Props = {
 export default function MapComponent({ latitude, longitude, height = 200 }: Props) {
   // On web: render Google Maps embed iframe (no react-native-maps import)
   if (Platform.OS === 'web') {
-    const src = `https://www.google.com/maps/embed/v1/view?key=${AIzaSyA5xlWsMx5_DY0muBsDUqc_WLD7xvOOQ1o}&center=${latitude},${longitude}&zoom=14&maptype=roadmap`;
+    const src = `https://www.google.com/maps/embed/v1/view?key=${'AIzaSyA5xlWsMx5_DY0muBsDUqc_WLD7xvOOQ1o'}&center=${latitude},${longitude}&zoom=14&maptype=roadmap`;
     return (
-      <View style={[styles.webWrap, { height }]}>
+      <View style={[styles.webWrap, { height :22}]}>
         <iframe
           title="map"
           src={src}
@@ -30,7 +29,7 @@ export default function MapComponent({ latitude, longitude, height = 200 }: Prop
   const Marker = require('react-native-maps').Marker;
 
   return (
-    <View style={[styles.mobileWrap, { height }]}>
+    <View style={[styles.mobileWrap, { height:height }]}>
       <MapView
         style={styles.map}
         initialRegion={{
