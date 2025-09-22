@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "newLogin",
-    "slug": "newLogin",
+    "name": "WayLink",
+    "slug": "WayLink",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -14,7 +14,7 @@
     "android": {
       "config": {
         "googleMaps": {
-          "apikey":"AIzaSyAkp7D79KD4uSeoiWUgkPazNgzBEMMLsio"
+          "apikey": "AIzaSyAkp7D79KD4uSeoiWUgkPazNgzBEMMLsio"
         }
       },
       "adaptiveIcon": {
