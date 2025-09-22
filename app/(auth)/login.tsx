@@ -4,6 +4,7 @@ import { getClerkInstance, useSignIn } from "@clerk/clerk-expo";
 import { useRouter } from "expo-router";
 import { useState } from "react";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import useKeyboardState from "../hook/useKeyboardState";
 
 export default function Login() {
   const router = useRouter();
@@ -25,7 +26,7 @@ export default function Login() {
       if (signInAttempt.status === "complete") {
         await setActive({ session: signInAttempt.createdSessionId });
         const userId = getClerkInstance().user?.id;
-        ensureJwt(userId!,"login");
+        ensureJwt(userId!, "login");
         router.replace("/");
       } else {
         // If the status isn't complete, check why. User might need to
@@ -39,7 +40,9 @@ export default function Login() {
     }
   };
   return (
-    <View className="flex-1 bg-green-800 justify-end items-center  w-[100%]">
+    <View
+      className={`flex-1 ${useKeyboardState() ? "justify-center" : "justify-end"}  items-center bg-green-800   w-[100%]`}
+    >
       <View className="bg-white rounded-3xl w-full p-6 shadow-lg">
         <Text className="text-2xl font-bold text-center mb-6">Login</Text>
 
@@ -66,7 +69,7 @@ export default function Login() {
           onPress={onSignInPress}
           className="bg-green-700 py-3 rounded-2xl mb-4"
         >
-          <Text className="text-center text-white font-semibold" >Login</Text>
+          <Text className="text-center text-white font-semibold">Login</Text>
         </TouchableOpacity>
 
         <Text className="text-center text-gray-600 pb-6">
